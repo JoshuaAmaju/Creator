@@ -123,3 +123,9 @@ Creator.createNode({
  ]
 });
 ```
+
+### Also remove elements
+Creator.removeNode(```parent```, ```child```);
+
+#### example
+```Creator.removeNode(".app", span, li, div);```
