@@ -60,7 +60,7 @@ Creator.createNode({
 });
 ```
 
-### And event add callbacks
+### Add callbacks
 ```
 Creator.createNode({
   elementType: "span",
