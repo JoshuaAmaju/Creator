@@ -21,7 +21,7 @@ Creator.createNode({
   children: [
   {
     elementType: "div",
-    classes: ["demo"],
+    classes: ["demo", "another-demo"]
   }
  ]
 });
@@ -34,7 +34,7 @@ Creator.createNode({
   classes: ["demo"],
   parent: ".app",
   attributes: {
-    "data-key": "demo-key"
+    "data-key": "demo-key",
     style: "background: #333"
   }
 });
@@ -70,10 +70,12 @@ Creator.createNode({
 ```
 
 ### Hold a reference to the created element
+```
 let li = Creator.createNode({
   elementType: "li",
   parent: "ul"
 });
+```
 
 Complex nesting is supported also, creating a tree like structure for example:
 ```
@@ -85,8 +87,14 @@ Creator.createNode({
     elementType: "div",
     classes: ["demo"],
     children: [{
-      elementType: "div",
-      classes: ["demo"]
+      elementType: "ul",
+      classes: ["demo"],
+      children: [
+      {
+        elementType: "li",
+        text: "demo text"
+      }
+      ]
     },
     {
       elementType: "span",
