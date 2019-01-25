@@ -60,6 +60,24 @@ Creator.createNode({
 });
 ```
 
+### Create and insert element before another element
+```
+Creator.createNode({
+  elementType: "span",
+  parent: ".app",
+  before: ".col"
+});
+```
+
+### Create and insert element after another element
+```
+Creator.createNode({
+  elementType: "span",
+  parent: ".app",
+  after: ".col"
+});
+```
+
 ### Add callbacks
 ```
 Creator.createNode({
