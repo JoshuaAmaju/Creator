@@ -2,7 +2,7 @@
 Makes inserting elements into the DOM a breeze.
 
 ## Usage
-```<script src"creator.min.js"></script>```
+```<script src"creator.js"></script>```
 
 ### Simple demo
 ```
@@ -55,8 +55,10 @@ Creator.createNode({
 ```
 Creator.createNode({
   elementType: "input",
-  nodeType: "checkbox",
-  parent: ".app"
+  parent: ".app",
+  attributes: {
+    type: "checkbox"
+  }
 });
 ```
 
@@ -87,6 +89,8 @@ Creator.createNode({
 });
 ```
 
+#### ```after```, ```before``` and ```parent``` can be an element or selector
+
 ### Hold a reference to the created element
 ```
 let li = Creator.createNode({
@@ -95,7 +99,8 @@ let li = Creator.createNode({
 });
 ```
 
-Complex nesting is supported also, creating a tree like structure for example:
+Complex nesting is supported also, but not advisable
+For example, creating a tree like structure:
 ```
 Creator.createNode({
   elementType: "div",
@@ -110,7 +115,17 @@ Creator.createNode({
       children: [
       {
         elementType: "li",
-        text: "demo text"
+        text: "demo text",
+        children: [
+          {
+            elementType: "ul",
+            children: [
+              {
+                elementType: "li"
+              }
+            ]
+          }
+        ]
       }
       ]
     },
@@ -129,3 +144,4 @@ Creator.removeNode(```parent```, ```children```);
 
 #### example
 ```Creator.removeNode(".app", span, li, div);```
+```span```, ```li``` and ```div``` are all children of ```.app```
