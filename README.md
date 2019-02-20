@@ -46,10 +46,12 @@ Creator.createNode({
   elementType: "div",
   classes: ["demo"],
   parent: ".app",
-  style: {
+  **style: {
     background: "#333",
     fontSize:"0.9em"
-  }
+  }**
+  OR
+  **style: "background: #333; font-size: 0.9em"**
 });
 ```
 
