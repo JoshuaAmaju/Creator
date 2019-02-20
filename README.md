@@ -116,7 +116,7 @@ let li = Creator.createNode({
 });
 ```
 
-Complex nesting is supported also, but not advisable
+### Complex nesting is supported also, but not advisable.
 For example, creating a tree like structure:
 ```
 Creator.createNode({
