@@ -40,6 +40,19 @@ Creator.createNode({
 });
 ```
 
+### Create and *Style* element
+```
+Creator.createNode({
+  elementType: "div",
+  classes: ["demo"],
+  parent: ".app",
+  style: {
+    background: "#333",
+    fontSize:"0.9em"
+  }
+});
+```
+
 ### Create elements with html or text content
 ```
 Creator.createNode({
