@@ -163,4 +163,5 @@ Creator.removeNode(```parent```, ```children```);
 
 #### example
 ```Creator.removeNode(".app", span, li, div);```
-```span```, ```li``` and ```div``` are all children of ```.app```
+
+##### ```span```, ```li``` and ```div``` are all children of ```.app```
