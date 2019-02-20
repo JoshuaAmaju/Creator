@@ -5,14 +5,6 @@ const camelCase = (function (input) {
     });
 });
 
-const dashed = (function (input) {
-    if (!input.startsWith("data")) {
-        input = "data" + input.charAt(0).toUpperCase() + input.slice(1);
-    }
-
-    return input.replace(/([A-Z])/g, '-$1').toLowerCase();
-});
-
 // Styles element
 const styleElement = (function (element, style) {
   if (typeof style === "string") {
@@ -30,7 +22,7 @@ const styleElement = (function (element, style) {
 const addAttribute = (function (element, attributes) {
   for (const key in attributes) {
       if (attributes.hasOwnProperty(key)) {
-          element.setAttribute(dashed(key), attributes[key]);
+          element.setAttribute(key, attributes[key]);
       }
   }
 });
@@ -55,8 +47,6 @@ const createNode = (function (options) {
   // Check if the parent is an element or a selector.
   // if parent is a selector, it goes ahead to select the element from the DOM
   if (typeof parent === "string") parent = document.querySelector(parent);
-
-  // if (el.nodeName === "INPUT") el.type = nodeType;
 
   if (id !== undefined) el.id = id;
   if (html !== undefined) el.innerHTML = html;
